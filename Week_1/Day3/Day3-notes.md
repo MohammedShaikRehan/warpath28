@@ -1,4 +1,4 @@
-## 🔹 Section 01: Pandas Core Concepts
+## Section 01: Pandas Core Concepts
 
 ### 🤔 What is Pandas?
 **Pandas** is a powerful Python library built on top of **NumPy** that makes working with **tabular data** (think: rows and columns) super simple.
@@ -29,7 +29,7 @@ Think: A dictionary of Series = a table
 
 ---
 
-### ✅ Mini Challenge: Create a DataFrame (to remember with ease)
+### Mini Challenge: Create a DataFrame (to remember with ease)
 
 **Goal:** Create a DataFrame using `pd.Series` for each column.
 
@@ -45,7 +45,7 @@ data = pd.DataFrame({
 print(data)
 ```
 ---
-## 🔹 Section 02: Indexing, Filtering & Transformations
+## Section 02: Indexing, Filtering & Transformations
 
 ---
 
@@ -59,7 +59,7 @@ df.loc['Messi']     # Gets the row with label 'Messi'
 df.iloc[0]          # Gets the first row by position
 ```
 
-💡 **Tip:** we can set your own index to make `.loc[]` even more powerful:
+**Tip(dont forget ever!):** we can set your own index to make `.loc[]` even more powerful:
 
 ```python
 df.set_index('Player', inplace=True) #inplace is to perma del it btw
@@ -74,7 +74,7 @@ df.reset_index(inplace=True)
 
 ---
 
-### 📊 Describing Data
+### Describing Data
 
 ```python
 df.describe()       # Get summary statistics (mean, std, min, max, etc.)
@@ -82,7 +82,7 @@ df.describe()       # Get summary statistics (mean, std, min, max, etc.)
 
 ---
 
-### 🔃 Sorting Values
+### Sorting Values
 
 ```python
 df.sort_values(by='Goals', ascending=False)   # Sort by 'Goals' in descending order
@@ -102,7 +102,7 @@ df[df['Retired'] == False]    # Non-retired players
 
 ---
 
-### 🔁 Using `.apply()` — Row-wise logic
+### Using `.apply()` — Row-wise logic
 
 - AddING a new column using logic with `lambda`: #basically a short loop but super cool
 
@@ -112,7 +112,7 @@ df['Tier'] = df['Goals'].apply(lambda x: 'Legend' if x > 700 else 'Active')
 
 ---
 
-### 🔗 Using `.map()` — Fast mapping using dictionaries
+### Using `.map()` — Fast mapping using dictionaries
 
 - Example: Map clubs to their leagues
 
@@ -130,7 +130,7 @@ df['League'] = df['clubs'].map(club_to_league)
 
 ---
 
-### 🧹 Dropping Columns (Be careful!--messed up so many times)
+### Dropping Columns (Be careful!--messed up so many times)
 
 ```python
 df.drop('Assists', axis=1)                     # ❌ Won’t change df unless:
@@ -140,7 +140,7 @@ df = df.drop('Assists', axis=1)                # ✅ Reassigns to df
 
 ---
 
-### 🧱 Setting and Resetting Index
+### Setting and Resetting Index
 
 ```python
 df.set_index('Player', inplace=True)   # Set 'Player' as the new index
@@ -149,7 +149,7 @@ df.reset_index(inplace=True)           # Reset back to numeric index
 
 ---
 
-## ✅ End of Day Recap
+## End of Day Recap
 
 - `.loc[]` vs `.iloc[]`
 - `.describe()`, `.sort_values()`
