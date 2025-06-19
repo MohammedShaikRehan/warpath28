@@ -67,11 +67,11 @@ Handled edge-case cleaning (like “23 years old”, “--”, “unknown”), c
 ## Project Snapshots
 
 ### 🟢 Football Club Analyzer
-![Football Club Analyzer](Week_1/images/ss-Football_Club_AnAnalyzer.png)
+![Football Club Analyzer](images/ss-Football_Club_AnAnalyzer.png)
 
 ---
 ### 🟢 Customer Spend & Loyalty Dashboard
-![Customer Dashboard](Week_1/images/ss-Customer_Dashboard.png)
+![Customer Dashboard](images/ss-Customer_Dashboard.png)
 
 ---
 ## Core Skills Unlocked This Week
