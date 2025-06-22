@@ -40,7 +40,7 @@ sns.barplot(data=region_totals, x='Region', y='CLV', palette='viridis')
 plt.title('Total CLV per Region')
 plt.show()
 ```
-> 📦 Helps identify which regions contribute most to total customer value.
+>  Helps identify which regions contribute most to total customer value.
 
 ---
 
