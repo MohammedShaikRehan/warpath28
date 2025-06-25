@@ -135,7 +135,7 @@ That’s growth.
 
 --> Updates for FreeCodeCamp like projects and certificate will be uploaded day-wise soon!
 
-I’m still here. Still showing up. Still building. 
+I’m still here. Still showing up. Still building.
 
 ---
 ## What’s Next – Week 3 Incoming...
