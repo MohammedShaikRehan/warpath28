@@ -6,7 +6,7 @@
 
 ## Projects Built:
 
-### 🟡 Day 1–2: **Heatwave Analyzer**   
+### 🟡 Day 1–2: **Heatwave Analyzer**  
 **Description:**  
 Simulates daily temperature data over 60 days. Analyzes weekly averages, identifies heatwaves, and detects sudden spikes using NumPy.
 
