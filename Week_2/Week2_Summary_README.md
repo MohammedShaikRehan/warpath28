@@ -88,7 +88,29 @@ Extracted email providers using `.str.split()`, `.str[1]`. Cleaned noisy data us
 - Column cleanup, dictionary remapping
 
 ---
+## Mini-Projects Snapshots
+## Customer Value Dashboard(Day8)
+Visualizing loyalty tiers across regions using heatmaps.
+![Day8-Visual](Images-Week2/Day8_visual.png)
 
+## Customer Segmentation(Day10)
+Barplots showing CLV distribution across demographic groups.
+![Day10-Visual](Images-Week2/day10_visual.png)
+
+## Big Project Snapshots - E-Commerce Insights Dashboard
+### 🔍 Loyalty Tier Heatmap  
+Visual comparison of customer loyalty across regions.
+![Day14-Visual](Images-Week2/big_project_heatmap.png)
+
+### 📊 Tier-wise Distribution Dashboard  
+Stacked bar of tiers by region to simulate a real dashboard.
+![Day14-Visual](Images-Week2/big_project_stackedbar.png)
+
+### 📈 Monthly CLV Trend  
+Line chart showing customer value over time.
+![Day14-Visual](Images-Week2/big_project_lineplot.png)
+
+---
 ## Core Skills Unlocked This Week
 
 ✅ `groupby()`, `.agg()` for advanced aggregation  
