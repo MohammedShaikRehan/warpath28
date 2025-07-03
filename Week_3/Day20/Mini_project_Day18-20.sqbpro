@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="unified_data.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1401"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="unified_data" custom_title="0" dock_id="1" table="4,12:mainunified_data"/><dock_state state="000000ff00000000fd00000001000000020000000000000000fc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000ffffffff0000011300ffffff000000000000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">/*
+# Mini Project: Advanced SQL on Unified Dataset (Days 18-20)
+
+&gt; This project combines everything learned from Day 18, 19, and 20 using one single table called `unified_data`.
+
+---
+
+--&gt; Concepts Covered:
+- Subqueries, Set Operations (Day 18)
+- CTEs, Nested CTEs, Hierarchical Queries (Day 19)
+- CASE, EXISTS, and Conditional Filtering (Day 20)
+
+---
+
+--&gt; Dataset: `unified_data`
+Columns used:
+- customer_id, name, region, clv
+- order_id, order_amount
+- employee_id, manager_id, position
+- lead_score
+*/
+
+-- 1️. Identify high-value customers in each region (CLV &gt; regional avg)
+SELECT name, region, clv
+FROM unified_data c1
+WHERE clv &gt; (
+  SELECT AVG(clv)
+  FROM unified_data c2
+  WHERE c1.region = c2.region
+);
+
+
+-- 2️. Use CTE to get region-wise CLV rank
+WITH ranked AS (
+  SELECT name, region, clv,
+         RANK() OVER (PARTITION BY region ORDER BY clv DESC) AS region_rank
+  FROM unified_data
+)
+SELECT * FROM ranked
+WHERE region_rank &lt;= 3;
+
+
+-- 3️. Find customers with both orders and lead_score above 80
+SELECT name, order_id, lead_score
+FROM unified_data c
+WHERE EXISTS (
+  SELECT 1
+  FROM unified_data o
+  WHERE o.customer_id = c.customer_id AND o.order_id IS NOT NULL
+)
+AND lead_score &gt; 80;
+
+
+-- 4️. Show customers with CLV categories using CASE
+SELECT name, clv,
+  CASE
+    WHEN clv &gt;= 5000 THEN 'VIP'
+    WHEN clv &gt;= 3000 THEN 'Regular'
+    ELSE 'Low'
+  END AS customer_status
+FROM unified_data;
+
+
+-- 5️. Get employees and their managers using self-join
+SELECT e.name AS employee, h.name AS manager
+FROM unified_data e
+JOIN unified_data h
+ON e.manager_id = h.employee_id;
+
+
+-- 6️. INTERSECT: Find names that are both customers and employees
+SELECT name FROM unified_data WHERE customer_id IS NOT NULL
+INTERSECT
+SELECT name FROM unified_data WHERE employee_id IS NOT NULL;
+
+
+-- 7️. Customers who never placed orders (NOT EXISTS)
+SELECT name
+FROM unified_data c
+WHERE NOT EXISTS (
+  SELECT 1 FROM unified_data o
+  WHERE o.customer_id = c.customer_id AND o.order_id IS NOT NULL
+);
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
