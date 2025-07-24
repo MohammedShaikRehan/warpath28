@@ -1,4 +1,3 @@
-```
 # Netflix Usage Analysis — Week 3 Project
 
 Welcome to the Week 3 SQL Project! This project uses an SQLite database (`week3_project.db`) to analyze user behavior on a fictional streaming platform using advanced SQL queries.
@@ -99,4 +98,4 @@ Author
 > “Data without insight is noise. But data with the right questions? That’s value.”
 
 Let’s build stories with SQL. 💥
-```
+
