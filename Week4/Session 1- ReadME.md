@@ -1,5 +1,8 @@
 # Tableau Power Session 1 — Superstore Data Visualization
 
+## 🌐 Live Dashboard
+View the interactive dashboard here: [**Click to View on Tableau Public**](https://public.tableau.com/views/Session1SuperstoreDataVisualization/SuperstoreSalesOverviewDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
 ---
 
 ## Overview
