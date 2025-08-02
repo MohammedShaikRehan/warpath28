@@ -1,5 +1,9 @@
 # Tableau Session 2 — Superstore Advanced Dashboard
 
+
+## 🌐 Live Dashboard
+View the interactive dashboard here: [**Click to View on Tableau Public**](https://public.tableau.com/views/Session2_Superstore_Advanced/SuperstoreAdvancedOverview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
 ## Overview
 This session builds on **Session 1** to create a **recruiter-ready, interactive Tableau dashboard** using the **Sample – Superstore** dataset.
 
